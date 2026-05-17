@@ -8,7 +8,23 @@
             ＋ নতুন স্কুল যোগ করুন
         </a>
     </div>
+
     <div class="card-body">
+        <button type="button" class="btn btn-primary mb-3" id="liveToastBtn">Show live toast</button>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Bootstrap</strong>
+                    <small>Now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
+            </div>
+        </div>
+
         @if($schools->isEmpty())
             <div class="empty-state">
                 <div class="icon">🏫</div>
@@ -58,3 +74,20 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toastTrigger = document.getElementById('liveToastBtn');
+        const toastElement = document.getElementById('liveToast');
+
+        if (toastTrigger && toastElement && window.bootstrap) {
+            const toast = bootstrap.Toast.getOrCreateInstance(toastElement);
+
+            toastTrigger.addEventListener('click', () => {
+                toast.show();
+            });
+        }
+    });
+</script>
+@endpush

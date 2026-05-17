@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Elegant Form & Table | Bootstrap 5</title>
+  <!-- Bootstrap 5 CSS (latest stable) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Google Fonts for a subtle modern touch -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <style>
+    /* reset & global refinement */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8fafc;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      padding: 2rem 1.5rem;
+      color: #0a2540;
+    }
+
+    /* custom container width for better readability */
+    .main-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+      padding: 2rem 2rem 2.5rem 2rem;
+      transition: all 0.2s ease;
+    }
+
+    /* spacing variables (consistent with root scope) */
+    :root {
+      --main-padding: 20px;
+      --main-margin: auto;
+      --card-radius: 1.25rem;
+    }
+
+    /* headings with elegance */
+    .display-1 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1e2b3c, #2c5a6e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+      font-size: calc(1.625rem + 3.5vw);
+    }
+
+    h2 {
+      font-weight: 500;
+      color: #2c3e4e;
+      border-left: 5px solid #0d6efd;
+      padding-left: 1rem;
+      margin: 0.75rem 0 1.75rem 0;
+      font-size: 1.8rem;
+    }
+
+    /* form card style */
+    .form-section {
+      background: #ffffff;
+      border-radius: var(--card-radius);
+      padding: 1rem 0.5rem 1rem 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-label {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #1f3b4c;
+    }
+
+    input, select, textarea {
+      border-radius: 0.75rem !important;
+      border: 1px solid #dce5ec;
+      padding: 0.7rem 1rem;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      background-color: #fff;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15);
+      outline: none;
+    }
+
+    .btn-submit {
+      background: #0d6efd;
+      border: none;
+      padding: 0.7rem 2rem;
+      font-weight: 600;
+      border-radius: 2rem;
+      transition: 0.2s;
+      box-shadow: 0 2px 6px rgba(13, 110, 253, 0.2);
+    }
+
+    .btn-submit:hover {
+      background: #0b5ed7;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(13, 110, 253, 0.25);
+    }
+
+    /* table styling - modern and clean */
+    .table-custom {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      margin-top: 1rem;
+      border-collapse: separate;
+      border-style: hidden;
+    }
+
+    .table-custom th {
+      background-color: #eef2f6;
+      font-weight: 600;
+      border-bottom: 2px solid #d4dfe8;
+      padding: 1rem 0.75rem;
+    }
+
+    .table-custom td {
+      vertical-align: middle;
+      padding: 0.9rem 0.75rem;
+    }
+
+    /* contextual row & cell demo styles (showcasing Bootstrap utilities) */
+    .demo-hint {
+      background: #f1f5f9;
+      border-radius: 1rem;
+      padding: 0.8rem 1.2rem;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #1e4663;
+      border-left: 3px solid #0d6efd;
+    }
+
+    .demo-hint code {
+      background: #e9ecef;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .color-swatch-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .badge-bs {
+      background: #eef2ff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    /* responsive spacing */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      .main-container {
+        padding: 1.5rem;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* restore margins for inner elements appropriately */
+      .form-section, .table-section {
+        margin-top: 0.5rem;
+      }
+      input, select, textarea {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /* Keep inline margins consistent with original spirit but better UX */
+    .row > * {
+      margin: 0;
+      padding: 0;
+    }
+
+    label, input, select, textarea, .btn-submit {
+      margin: 0 0 0.5rem 0;
+    }
+
+    /* restore spacing for form groups */
+    .mb-3 {
+      margin-bottom: 1rem;
+    }
+
+    hr {
+      margin: 1.8rem 0;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-container">
+  <!-- header section -->
+  <div class="text-center text-md-start">
+    <h1 class="display-1">✨ Hello world</h1>
+    <h2>Welcome to my website</h2>
+    <p class="text-secondary mt-2" style="max-width: 550px;">Interactive contact form & elegant data table — built with Bootstrap 5 and refined custom touches.</p>
+  </div>
+
+  <!-- FORM SECTION (improved semantics & accessibility) -->
+  <div class="form-section mt-4">
+    <form action="#" method="post" class="needs-validation" novalidate>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Full name <span class="text-muted">*</span></label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="e.g., Maria Lopez" required>
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email address <span class="text-muted">*</span></label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="hello@example.com" required>
+          <div class="invalid-feedback">Valid email is required.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="country" class="form-label">Country</label>
+          <select id="country" name="country" class="form-select">
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="australia">Australia</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="message" class="form-label">Message / Comments</label>
+          <textarea id="message" name="message" class="form-control" rows="2" placeholder="Your feedback or inquiry..."></textarea>
+        </div>
+        <div class="col-12 mt-2">
+          <button type="submit" class="btn btn-submit text-white px-4 py-2">Send message →</button>
+          <small class="text-muted ms-3">We'll never share your info.</small>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- TABLE SECTION (primary demo: Bootstrap table with hover & responsiveness) -->
+  <div class="table-section mt-5">
+    <h3 class="fw-semibold mb-3" style="font-size: 1.5rem;">📋 Team members directory</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle shadow-sm rounded-4 overflow-hidden">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col" style="width: 60px;">#</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Handle / Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>John</td>
+            <td>Doe</td>
+            <td>@social</td>
+          </tr>
+          <tr class="table-active">
+            <th scope="row">4</th>
+            <td>Emma</td>
+            <td>Watson</td>
+            <td>@emma_dev</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- BOOTSTRAP CONTEXTUAL COLORS DEMONSTRATION (fully fixed & visualized) -->
+  <div class="demo-hint mt-5">
+    <strong>🎨 Bootstrap 5 contextual classes — table, row & cell variants</strong>
+    <div class="mt-2 small">Inspired by original markup, these classes are fully functional. Below you can see live examples:</div>
+  </div>
+
+  <!-- Table variants showcase (actual tables using contextual colors) -->
+  <div class="row g-4 mt-1">
+    <!-- Table backgrounds (whole table) -->
+    <div class="col-lg-6">
+      <div class="fw-medium mb-2">📌 Whole table variants</div>
+      <div class="table-responsive mb-3">
+        <table class="table table-primary table-sm rounded-3">
+          <thead><tr><th>Table-primary</th><th>Context</th></tr></thead>
+          <tbody><tr><td>Primary theme</td><td>#cfe2ff</td></tr></tbody>
+        </table>
+      </div>
+      <div class="table-responsive mb-3">
+        <table class="table table-secondary">
+          <thead><tr><th>Table-secondary</th><th>Soft gray</th></tr></thead>
+          <tbody><tr><td>Secondary look</td><td>#e2e3e5</td></tr></tbody>
+        </table>
+      </div>
+      <div class="table-responsive mb-3">
+        <table class="table table-success">
+          <thead><tr><th>Table-success</th><th>Success tone</th></tr></thead>
+          <tbody><tr><td>Green accent</td><td>#d1e7dd</td></tr></tbody>
+        </table>
+      </div>
+      <div class="table-responsive mb-3">
+        <table class="table table-danger">
+          <thead><tr><th>Table-danger</th><th>Error style</th></tr></thead>
+          <tbody><tr><td>Red highlight</td><td>#f8d7da</td></tr></tbody>
+        </table>
+      </div>
+      <div class="table-responsive mb-3">
+        <table class="table table-warning">
+          <thead><tr><th>Table-warning</th><th>Attention</th></tr></thead>
+          <tbody><tr><td>Yellowish</td><td>#fff3cd</td></tr></tbody>
+        </table>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-info">
+          <thead><tr><th>Table-info</th><th>Information</th></tr></thead>
+          <tbody><tr><td>Cyan blend</td><td>#cff4fc</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Row & cell examples using Bootstrap classes -->
+    <div class="col-lg-6">
+      <div class="fw-medium mb-2">✨ Row & cell contextual styles</div>
+      <table class="table table-bordered">
+        <thead>
+          <tr><th>#</th><th>Row variant</th><th>Cell variant example</th></tr>
+        </thead>
+        <tbody>
+          <tr class="table-primary">
+            <th scope="row">1</th>
+            <td>Primary row</td>
+            <td class="table-warning">Warning cell</td>
+          </tr>
+          <tr class="table-secondary">
+            <th scope="row">2</th>
+            <td>Secondary row</td>
+            <td class="table-info">Info cell</td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">3</th>
+            <td>Success row</td>
+            <td class="table-danger">Danger cell</td>
+          </tr>
+          <tr class="table-danger">
+            <th scope="row">4</th>
+            <td>Danger row</td>
+            <td class="table-light">Light bg</td>
+          </tr>
+          <tr class="table-warning">
+            <th scope="row">5</th>
+            <td>Warning row</td>
+            <td class="table-dark text-white">Dark cell</td>
+          </tr>
+          <tr class="table-info">
+            <th scope="row">6</th>
+            <td>Info row</td>
+            <td class="table-primary">Primary cell</td>
+          </tr>
+          <tr class="table-light">
+            <th scope="row">7</th>
+            <td>Light row</td>
+            <td class="table-success">Success cell</td>
+          </tr>
+          <tr class="table-dark text-white">
+            <th scope="row">8</th>
+            <td>Dark row</td>
+            <td class="table-secondary">Secondary cell</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="alert alert-light border mt-2">
+        ✅ <strong>All Bootstrap contextual classes work:</strong> <code>.table-primary</code>, <code>.table-secondary</code>, <code>.table-success</code>, <code>.table-danger</code>, <code>.table-warning</code>, <code>.table-info</code>, <code>.table-light</code>, <code>.table-dark</code> on tables, rows, or individual cells.
+      </div>
+    </div>
+  </div>
+
+  <!-- bonus: additional contextual row examples from original request (all showcased) -->
+  <div class="mt-4 pt-2">
+    <h5 class="mb-3">🔍 Quick reference — contextual rows & cells (fully implemented)</h5>
+    <div class="table-responsive">
+      <table class="table table-sm table-bordered align-middle">
+        <thead class="table-light">
+          <tr><th>Row class</th><th>Preview background</th><th>Cell classes (td/th)</th></tr>
+        </thead>
+        <tbody>
+          <tr class="table-primary"><td><code>.table-primary</code></td><td>Primary shade</td><td class="table-primary">primary cell</td></tr>
+          <tr class="table-secondary"><td><code>.table-secondary</code></td><td>Secondary shade</td><td class="table-secondary">secondary cell</td></tr>
+          <tr class="table-success"><td><code>.table-success</code></td><td>Success green</td><td class="table-success">success cell</td></tr>
+          <tr class="table-danger"><td><code>.table-danger</code></td><td>Danger red</td><td class="table-danger">danger cell</td></tr>
+          <tr class="table-warning"><td><code>.table-warning</code></td><td>Warning yellow</td><td class="table-warning">warning cell</td></tr>
+          <tr class="table-info"><td><code>.table-info</code></td><td>Info cyan</td><td class="table-info">info cell</td></tr>
+          <tr class="table-light"><td><code>.table-light</code></td><td>Light gray</td><td class="table-light">light cell</td></tr>
+          <tr class="table-dark"><td><code>.table-dark</code></td><td class="text-white">Dark tone</td><td class="table-dark text-white">dark cell</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="my-4">
+
+  <footer class="text-center text-muted small">
+    <span>⚡ Fully responsive | Bootstrap 5.3 | All contextual color variants included (tables, rows, cells)</span>
+    <div class="mt-2">
+      <span class="badge-bs">#UI_Refined</span>
+      <span class="badge-bs ms-2">#Semantic_Forms</span>
+    </div>
+  </footer>
+</div>
+
+<!-- Bootstrap JS bundle for proper interactions (optional but needed for toggles) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- tiny client-side validation to prevent empty submit (non-intrusive) -->
+<script>
+  (function() {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          event.preventDefault();
+          // demo feedback: alert for demonstration purposes but form does not actually POST
+          alert('✨ Thank you! Your message has been received (demo mode).');
+          form.reset();
+          form.classList.remove('was-validated');
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>
+</body>
+</html>

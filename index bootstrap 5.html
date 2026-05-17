@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Complete HTML Form Tags - Ultimate Reference</title>
+  <!-- Bootstrap 5 for styling (optional but enhances layout) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons for visual enhancement -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fc 0%, #e9eef5 100%);
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      padding: 2rem 1rem;
+    }
+
+    .form-master-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header-section h1 {
+      font-weight: 700;
+      background: linear-gradient(120deg, #1a2a3a, #0d6efd);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      font-size: 2.8rem;
+    }
+
+    .tag-badge {
+      background: #0d6efd10;
+      border-left: 4px solid #0d6efd;
+      padding: 0.3rem 0.8rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #0a58ca;
+      border-radius: 0 20px 20px 0;
+    }
+
+    .card-tag {
+      background: #f8f9fc;
+      border: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-radius: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .card-tag:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .card-header-custom {
+      background: #ffffffdd;
+      border-bottom: 2px solid #e2e8f0;
+      padding: 1rem 1.2rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      border-radius: 1.2rem 1.2rem 0 0 !important;
+    }
+
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      margin-top: 0.8rem;
+    }
+
+    .demo-box {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      border: 1px solid #dee2e6;
+    }
+
+    hr {
+      margin: 2rem 0;
+      opacity: 0.3;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+    }
+
+    .list-tag {
+      display: inline-block;
+      background: #eef2ff;
+      border-radius: 30px;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="form-master-container">
+  <div class="header-section">
+    <h1><i class="fas fa-code-branch me-2"></i> HTML Form Tags <br> Complete Reference</h1>
+    <p class="lead text-secondary mt-2">Every native form element — from basic input to advanced attributes — fully working examples</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+      <span class="list-tag">&lt;input&gt;</span>
+      <span class="list-tag">&lt;select&gt;</span>
+      <span class="list-tag">&lt;textarea&gt;</span>
+      <span class="list-tag">&lt;button&gt;</span>
+      <span class="list-tag">&lt;datalist&gt;</span>
+      <span class="list-tag">&lt;fieldset&gt;</span>
+      <span class="list-tag">&lt;output&gt;</span>
+      <span class="list-tag">&lt;progress&gt;</span>
+      <span class="list-tag">+more</span>
+    </div>
+  </div>
+
+  <!-- MAIN FORM (demo all tags inside one interactive context) -->
+  <form action="#" method="post" id="masterForm" class="needs-validation" novalidate>
+    <!-- 1. BASIC TEXT INPUTS -->
+    <div class="card card-tag">
+      <div class="card-header-custom bg-white">
+        <i class="fas fa-keyboard text-primary me-2"></i> 1. Text &amp; Basic Inputs
+        <span class="tag-badge ms-2">&lt;input type="text"&gt;</span>
+        <span class="tag-badge">&lt;input type="password"&gt;</span>
+        <span class="tag-badge">&lt;input type="email"&gt;</span>
+      </div>
+      <div class="card-body">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Text <code>type="text"</code></label>
+            <input type="text" class="form-control" placeholder="John Doe" name="fullname">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Password <code>type="password"</code></label>
+            <input type="password" class="form-control" placeholder="••••••" name="pwd">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Email <code>type="email"</code></label>
+            <input type="email" class="form-control" placeholder="hello@example.com" name="email">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label fw-semibold">Tel <code>type="tel"</code></label>
+            <input type="tel" class="form-control" placeholder="+1 234 567 8900" name="phone">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label fw-semibold">URL <code>type="url"</code></label>
+            <input type="url" class="form-control" placeholder="https://example.com" name="website">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label fw-semibold">Search <code>type="search"</code></label>
+            <input type="search" class="form-control" placeholder="search..." name="search">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label fw-semibold">Hidden <code>type="hidden"</code></label>
+            <input type="hidden" value="hidden_value_123" name="hiddenField">
+            <div class="alert alert-secondary mt-1 py-1 small"><i class="fas fa-eye-slash"></i> Hidden field (value sent but invisible)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. NUMERIC & DATE/TIME INPUTS -->
+    <div class="card card-tag">
+      <div class="card-header-custom bg-white">
+        <i class="fas fa-calendar-alt text-success me-2"></i> 2. Number & Date/Time inputs
+        <span class="tag-badge">number</span><span class="tag-badge">range</span><span class="tag-badge">date</span><span class="tag-badge">time</span><span class="tag-badge">datetime-local</span>
+      </div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-3">
+            <label>Number <code>type="number"</code></label>
+            <input type="number" class="form-control" name="age" min="1" max="120" step="1" value="25">
+          </div>
+          <div class="col-md-3">
+            <label>Range <code>type="range"</code> <span id="rangeVal">50</span></label>
+            <input type="range" class="form-range" name="volume" min="0" max="100" step="1" value="50" oninput="rangeVal.innerText=this.value">
+          </div>
+          <div class="col-md-3">
+            <label>Date <code>type="date"</code></label>
+            <input type="date" class="form-control" name="birthday">
+          </div>
+          <div class="col-md-3">
+            <label>Time <code>type="time"</code></label>
+            <input type="time" class="form-control" name="appointmentTime">
+          </div>
+          <div class="col-md-3">
+            <label>Datetime-local</label>
+            <input type="datetime-local" class="form-control" name="meeting">
+          </div>
+          <div class="col-md-3">
+            <label>Month <code>type="month"</code></label>
+            <input type="month" class="form-control" name="monthYear">
+          </div>
+          <div class="col-md-3">
+            <label>Week <code>type="week"</code></label>
+            <input type="week" class="form-control" name="weekYear">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. SELECT, OPTION, OPTGROUP, DATALIST -->
+    <div class="card card-tag">
+      <div class="card-header-custom bg-white">
+        <i class="fas fa-list-dropdown text-warning me-2"></i> 3. Dropdowns & Selection Tags: &lt;select&gt;, &lt;option&gt;, &lt;optgroup&gt;, &lt;datalist&gt;
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <label class="fw-semibold">Standard Select (single)</label>
+            <select class="form-select" name="country">
+              <option value="">-- Choose country --</option>
+              <option value="us">United States</option>
+              <option value="ca">Canada</option>
+              <option value="uk">United Kingdom</option>
+            </select>
+            <div class="mt-3">
+              <label class="fw-semibold">Select with Optgroup</label>
+              <select class="form-select" name="car">
+                <optgroup label="German Cars">
+                  <option value="bmw">BMW</option>
+                  <option value="mercedes">Mercedes</option>
+                </optgroup>
+                <optgroup label="Japanese Cars">
+                  <option value="toyota">Toyota</option>
+                  <option value="honda">Honda</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-semibold">Multiple Select (size & multiple)</label>
+            <select class="form-select" multiple size="3" name="hobbies[]">
+              <option value="reading">Reading</option>
+              <option value="coding">Coding</option>
+              <option value="gaming">Gaming</option>
+              <option value="hiking">Hiking</option>
+            </select>
+            <div class="mt-3">
+              <label class="fw-semibold">Datalist (combo box) <code>&lt;input list="dataList"&gt;</code></label>
+              <input list="browsers" class="form-control" placeholder="Start typing...">
+              <datalist id="browsers">
+                <option value="Chrome">
+                <option value="Firefox">
+                <option value="Edge">
+                <option value="Safari">
+                <option value="Opera">
+              </datalist>
+              <small class="text-muted">Combines text input with dropdown suggestions</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. TEXTAREA & BUTTON types -->
+    <div class="card card-tag">
+      <div class="card-header-custom bg-white">
+        <i class="fas fa-edit text-info me-2"></i> 4. Textarea & Buttons: &lt;textarea&gt;, &lt;button&gt; types, &lt;input type="submit/reset/button"&gt;
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <label>Textarea (multi-line) <code>&lt;textarea&gt;</code></label>
+            <textarea class="form-control" rows="3" name="message" placeholder="Write your message here..."></textarea>
+          </div>
+          <div class="col-12 mt-3">
+            <div class="d-flex flex-wrap gap-3 align-items-center">
+              <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit (button type=submit)</button>
+              <button type="reset" class="btn btn-secondary"><i class="fas fa-undo-alt"></i> Reset (button type=reset)</button>
+              <button type="button" class="btn btn-outline-info" onclick="alert('Custom JavaScript action!')">Button type=button</button>
+              <input type="submit" class="btn btn-success" value="Input Submit">
+              <input type="reset" class="btn btn-outline-danger" value="Input Reset">
+              <input type="button" class="btn btn-outline-warning" onclick="alert('input type=button')" value="Click Me">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. CHECKBOXES, RADIO BUTTONS, SWITCHES -->
+    <div class="card card-tag">
+      <div class="card-header-custom bg-white">
+        <i class="fas fa-check-square text-danger me-2"></i> 5. Checkbox, Radio, Toggle & Input group
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <label class="fw-semibold">Checkboxes (multiple selection)</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="html" name="skills[]" id="cbHtml">
+              <label class="form-check-label" for="cbHtml">HTML5</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="css" name="skills[]" id="cbCss">
+              <label class="form-check-label" for="cbCss">CSS3</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="js" name="skills[]" id="cbJs">
+              <label class="form-check-label" for="cbJs">JavaScript</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-semibold">Radio buttons (mutually exclusive)</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender" value="male" id="male">
+              <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender" value="female" id="female">
+              <label class="form-check-label" for="female">Female</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender" value="other" id="other">
+              <label class="form-check-label" for="other">Prefer not to say</label>
+            </div>
+            <div class="form-check form-switch mt-2">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitch" name="newsletter">
+              <label class="form-check-label" for="flexSwitch">Subscribe to newsletter (switch style)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. FILE UPLOAD, COLOR PICKER, IMAGE INPUT -->
+    <div class="card card-tag">
+      <div class="card-header-custom bg-white">
+        <i class="fas fa-image text-secondary me-2"></i> 6. File, Color, Image Inputs
+      </div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label><code>&lt;input type="file"&gt;</code></label>
+            <input type="file" class="form-control" name="uploadFile" multiple>
+          </div>
+          <div class="col-md-4">
+            <label><code>&lt;input type="color"&gt;</code></label>
+            <input type="color" class="form-control form-control-color" name="favColor" value="#0d6efd">
+          </div>
+          <div class="col-md-4">
+            <label><code>&lt;input type="image"&gt; (image as submit)</code></label>
+            <input type="image" src="https://placehold.co/120x40/0d6efd/white?text=Submit+Image" alt="Submit" style="max-width: 140px;" class="rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. FIELDSET, LEGEND, LABEL, OUTPUT, PROGRESS, METER -->
+    <div class="card card-tag">
+      <div class="card-header-custom bg-white">
+        <i class="fas fa-layer-group text-dark me-2"></i> 7. Grouping & advanced: &lt;fieldset&gt;, &lt;legend&gt;, &lt;output&gt;, &lt;progress&gt;, &lt;meter&gt;
+      </div>
+      <div class="card-body">
+        <fieldset class="border p-3 rounded-3 mb-3">
+          <legend class="float-none w-auto px-2 fw-bold"><i class="fas fa-users"></i> Fieldset + Legend example</legend>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Username:</label>
+              <input type="text" class="form-control" placeholder="username">
+            </div>
+            <div class="col-md-6">
+              <label>Department:</label>
+              <input type="text" class="form-control" placeholder="IT / HR">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="row mt-2">
+          <div class="col-md-4">
+            <label>Progress bar <code>&lt;progress&gt;</code></label>
+            <progress value="65" max="100" class="w-100" style="height: 20px; border-radius: 10px;"></progress>
+            <span>65%</span>
+          </div>
+          <div class="col-md-4">
+            <label>Meter (gauge) <code>&lt;meter&gt;</code></label>
+            <meter value="0.7" min="0" max="1" high="0.8" low="0.3" optimum="0.5" class="w-100"></meter>
+            <small>Value: 0.7 (normal range)</small>
+          </div>
+          <div class="col-md-4">
+            <label>Output element <code>&lt;output&gt;</code></label>
+            <div class="input-group">
+              <input type="number" id="numA" class="form-control" placeholder="Number A" value="5">
+              <span class="input-group-text">+</span>
+              <input type="number" id="numB" class="form-control" placeholder="Number B" value="3">
+              <span class="input-group-text">=</span>
+              <output name="result" id="calcResult" class="form-control text-center bg-light">8</output>
+            </div>
+            <script>
+              const a = document.getElementById('numA');
+              const b = document.getElementById('numB');
+              const outputSpan = document.getElementById('calcResult');
+              function updateOutput() { outputSpan.value = (Number(a.value) + Number(b.value)); }
+              a.addEventListener('input', updateOutput);
+              b.addEventListener('input', updateOutput);
+              updateOutput();
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. ADDITIONAL INPUT TYPES: TEL, WEEK, MONTH (already covered, but more) -->
+    <div class="card card-tag">
+      <div class="card-header-custom bg-white">
+        <i class="fas fa-microchip me-2"></i> 8. Extra attributes: readonly, disabled, placeholder, required, autofocus
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <input type="text" class="form-control" value="Readonly field" readonly>
+            <small class="text-muted">readonly</small>
+          </div>
+          <div class="col-md-3">
+            <input type="text" class="form-control" value="Disabled field" disabled>
+            <small class="text-muted">disabled</small>
+          </div>
+          <div class="col-md-3">
+            <input type="text" class="form-control" placeholder="Required example" required>
+            <small class="text-muted">required attribute</small>
+          </div>
+          <div class="col-md-3">
+            <input type="text" class="form-control" placeholder="autofocus" autofocus>
+            <small class="text-muted">autofocus (this input)</small>
+          </div>
+        </div>
+        <div class="mt-3">
+          <label>Spinner: input type="number" with step</label>
+          <input type="number" step="0.5" class="form-control w-25" value="2">
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden example of output from all fields - just demo -->
+    <div class="mt-3 text-center">
+      <button type="submit" class="btn btn-lg btn-dark px-5 shadow"><i class="fas fa-check-circle"></i> Submit All Form Data (demo)</button>
+      <button type="reset" class="btn btn-lg btn-outline-secondary ms-2"><i class="fas fa-broom"></i> Reset Entire Form</button>
+    </div>
+  </form>
+
+  <!-- HTML CODE PREVIEW (show all tags as reference) -->
+  <hr>
+  <div class="card bg-dark text-white mt-4">
+    <div class="card-header">
+      <i class="fas fa-code"></i> Complete list of HTML form tags used in this page (reference)
+    </div>
+    <div class="card-body">
+      <pre class="bg-dark text-white-50 border-0 m-0">&lt;form&gt;, &lt;input&gt; (text, password, email, tel, url, search, hidden, number, range, date, time, datetime-local, month, week, checkbox, radio, file, color, image, submit, reset, button), &lt;select&gt;, &lt;option&gt;, &lt;optgroup&gt;, &lt;datalist&gt;, &lt;textarea&gt;, &lt;button&gt;, &lt;fieldset&gt;, &lt;legend&gt;, &lt;label&gt;, &lt;output&gt;, &lt;progress&gt;, &lt;meter&gt;, readonly, disabled, required, autofocus, multiple, placeholder, min, max, step, value, name, action, method.</pre>
+      <div class="alert alert-light mt-2">✅ Every major HTML form tag is demonstrated with interactive examples. All native controls work across modern browsers.</div>
+    </div>
+  </div>
+
+  <footer>
+    <i class="fas fa-check-circle text-success"></i> Complete HTML form tag reference — Inputs, Selects, Textarea, Buttons, Fieldsets, Progress, Meter, Output, Datalist, Optgroup and more.
+    <br> <strong>Tip:</strong> Try interacting with range slider, color picker, datalist, and the output sum.
+  </footer>
+</div>
+
+<!-- Bootstrap JS Bundle (for toggles etc) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<!-- simple demo submit handler to prevent page reload & show data -->
+<script>
+  const masterForm = document.getElementById('masterForm');
+  masterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(masterForm);
+    let message = "📋 Form Data Submitted (demo):\n";
+    for (let [key, val] of formData.entries()) {
+      if (key !== 'hiddenField') message += `${key}: ${val}\n`;
+      else message += `${key}: (hidden value: ${val})\n`;
+    }
+    alert(message + "\nAll form elements are fully functional! ✅");
+    // uncomment next line if you want to actually reset after preview
+    // masterForm.reset();
+  });
+</script>
+</body>
+</html>
